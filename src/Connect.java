@@ -11,7 +11,7 @@ public class Connect{
     java.sql.Connection con;
     void Connect() throws Exception {
          this.con = DriverManager.getConnection(url, username, password);
-        Statement stm = con.createStatement();
+         Statement stm = con.createStatement();
     }
     void display() throws SQLException {
         Statement stm = con.createStatement();
