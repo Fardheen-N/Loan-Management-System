@@ -5,17 +5,17 @@ import java.sql.Statement;
 
 public class Connect{
 
-    String url = "jdbc:mysql://localhost:3306/Bank";
+    String url = "jdbc:mysql://localhost:3306/miniproject";
     String username="root";
     String password="007007";
     java.sql.Connection con;
     void Connect() throws Exception {
-         con = DriverManager.getConnection(url, username, password);
+         this.con = DriverManager.getConnection(url, username, password);
         Statement stm = con.createStatement();
     }
-    void display(String q) throws SQLException {
+    void display() throws SQLException {
         Statement stm = con.createStatement();
-        ResultSet rs=stm.executeQuery(q);
+        ResultSet rs=stm.executeQuery("select * from loan ;");
     }
     void query() throws Exception{
         Statement stm = con.createStatement();
