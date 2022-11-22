@@ -1,20 +1,15 @@
+import java.sql.Connection;
+
 public class Loan {
     private int ID;
-    private int EMI;
+    private float EMI;
     private float interest;
 
-    public int getEMI() {
+    public float getEMI(int bankID, int loanID, Connection con) {
+        //con.getInterest(con,loanID,bankID);
+        float sum;
         return EMI;
     }
-    public void setEMI(int EMI) {
-        this.EMI = EMI;
-    }
 
-    public float getInterest() {
-        return interest;
-    }
 
-    public void setInterest(float interest) {
-        this.interest = interest;
-    }
 }

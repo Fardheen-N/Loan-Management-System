@@ -19,7 +19,14 @@ public class Main {
         con1.getLoanInfo(con);
         System.out.println("Enter your choice : ");
         int loanID=sc.nextInt();
-//        con1.setEmi(con,emi,ID);
-//        con1.display(con,ID);
+        Loan loan= new Loan();
+//        for(int i=1;i<=4;i++)
+//        {
+//            emi=loan.getEMI(i,loanID,con);
+//            con1.setEmi(con,emi,i);
+//            con1.setInterest(con,interest,i);
+//        }
+        con1.display(con,loanID);
+
     }
 }
