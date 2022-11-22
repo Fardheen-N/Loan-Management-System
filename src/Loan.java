@@ -1,22 +1,20 @@
 public class Loan {
+    private int ID;
+    private int EMI;
+    private float interest;
 
-
-    private int loanID;
-    private String loanName;
-
-
-    public int getLoanID() {
-        return loanID;
+    public int getEMI() {
+        return EMI;
     }
-    public void setLoanID(int loanID) {
-        this.loanID = loanID;
+    public void setEMI(int EMI) {
+        this.EMI = EMI;
     }
 
-    public String getLoanName() {
-        return loanName;
+    public float getInterest() {
+        return interest;
     }
 
-    public void setLoanName(String loanName) {
-        this.loanName = loanName;
+    public void setInterest(float interest) {
+        this.interest = interest;
     }
 }
