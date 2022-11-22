@@ -2,6 +2,16 @@ public class Bank extends Loan {
     private int bankID;
     private String bankName;
 
+    public float getPI() {
+        return PI;
+    }
+
+    public void setPI(float PI) {
+        this.PI = PI;
+    }
+
+    private float PI;
+
     public int getBankID() {
         return bankID;
     }
