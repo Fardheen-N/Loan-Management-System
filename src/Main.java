@@ -20,13 +20,13 @@ public class Main {
         System.out.println("Enter your choice : ");
         int loanID=sc.nextInt();
         Loan loan= new Loan();
-//        for(int i=1;i<=4;i++)
-//        {
-//            emi=loan.getEMI(i,loanID,con);
-//            con1.setEmi(con,emi,i);
-//            con1.setInterest(con,interest,i);
-//        }
+        for(int i=1;i<=4;i++)
+        {
+            emi=loan.getEMI(i,loanID,con1,con);
+            con1.setEmi(con,emi,i);
+            con1.setInterest(con,interest,i);
+        }
         con1.display(con,loanID);
-
+        System.out.println("ARIGATHO GOSAIMUS ;)");
     }
 }

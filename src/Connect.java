@@ -5,7 +5,7 @@ public class Connect{
     void display(Connection con,int ID) throws SQLException {
         Statement stm = con.createStatement();
         ResultSet rs=stm.executeQuery("select B.bankName,L.EMI,L.interest,L.minDuration,L.maxDuration,L.penalty from loan as L inner join  bank as B on L.bankID = B.bankID where ID=1");
-        System.out.println("Bankname\t\tEMI\t\tInterest per month\t\tminimum time\t\tmaximum time\t\tPenalty per month");
+        System.out.println("Bankname\tEMI\tInterest per month\tminimum time\tmaximum time\tPenalty per month");
         while(rs.next())
         System.out.println(rs.getString("B.bankname")+"\t\t"+rs.getFloat("L.EMI")+"\t\t"+rs.getFloat("L.interest")+"\t\t"+rs.getInt("L.minDuration")+"\t\t"+rs.getInt("L.maxDuration")+"\t\t"+rs.getInt("L.penalty"));
     }
