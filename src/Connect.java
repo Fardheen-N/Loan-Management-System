@@ -5,17 +5,17 @@ public class Connect{
     void display(Connection con,int ID) throws SQLException {
         Statement stm = con.createStatement();
         ResultSet rs=stm.executeQuery("select B.bankName,L.EMI,L.interest,L.minDuration,L.maxDuration,L.penalty from loan as L inner join  bank as B on L.bankID = B.bankID where ID=1");
-        System.out.println("Bankname\tEMI\t\tInterest per month\tminimum time\tmaximum time\tPenalty per month");
+        System.out.printf("%s      %s       %s  %s\n","Bankname","EMI","Interest per month","Penalty per month");
         while(rs.next())
-        System.out.println(rs.getString("B.bankname")+"\t\t"+rs.getFloat("L.EMI")+"\t\t"+rs.getFloat("L.interest")+"%\t\t\t"+rs.getInt("L.penalty"));
+        System.out.printf("%-12s  %.2f   %.2f %18d\n",rs.getString("B.bankname"),rs.getFloat("L.EMI"),rs.getFloat("L.interest"),rs.getInt("L.penalty"));
         rs.close();
     }
     void displayDuration(Connection con,int ID) throws SQLException {
         Statement stm = con.createStatement();
         ResultSet rs=stm.executeQuery("select B.bankName,L.minDuration,L.maxDuration,L.penalty from loan as L inner join  bank as B on L.bankID = B.bankID where ID=1;");
-        System.out.println("Bankname\t\tminimum time\tmaximum time\tPenalty per month");
+        System.out.printf("%s    %s  %s  %s\n","Bankname","minDuration","maxDuration","Penalty per month");
         while(rs.next())
-            System.out.println(rs.getString("B.bankname")+"\t\t"+rs.getInt("L.minDuration")+"\t\t\t"+rs.getInt("L.maxDuration")+"\t\t\t"+rs.getInt("L.penalty"));
+            System.out.printf("%-13s%-12s%-12s %-10s\n",rs.getString("B.bankname"),rs.getInt("L.minDuration"),rs.getInt("L.maxDuration"),rs.getInt("L.penalty"));
         rs.close();
     }
     void getLoanInfo(Connection con) throws SQLException {
