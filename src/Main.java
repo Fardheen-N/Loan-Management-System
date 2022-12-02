@@ -30,6 +30,6 @@ public class Main {
             con1.setInterest(con,loan.getInterest(),i);
         }
         con1.display(con,loanID);
-        System.out.println("\n\nARIGATHO GOSAIMUS ;)");
+        //System.out.println("\n\nARIGATHO GOSAIMUS ;)");
     }
 }

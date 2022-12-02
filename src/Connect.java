@@ -5,9 +5,9 @@ public class Connect{
     void display(Connection con,int ID) throws SQLException {
         Statement stm = con.createStatement();
         ResultSet rs=stm.executeQuery("select B.bankName,L.EMI,L.interest,L.minDuration,L.maxDuration,L.penalty from loan as L inner join  bank as B on L.bankID = B.bankID where ID=1");
-        System.out.printf("%s      %s       %s  %s\n","Bankname","EMI","Interest per month","Penalty per month");
+        System.out.printf("%s      %s       %s  %s\n","Bankname","EMI","Interestpermonth(%)","Penalty per month");
         while(rs.next())
-        System.out.printf("%-12s  %.2f   %.2f %18d\n",rs.getString("B.bankname"),rs.getFloat("L.EMI"),rs.getFloat("L.interest"),rs.getInt("L.penalty"));
+        System.out.printf("%-12s  %.2f   %.2f %20d\n",rs.getString("B.bankname"),rs.getFloat("L.EMI"),rs.getFloat("L.interest"),rs.getInt("L.penalty"));
         rs.close();
     }
     void displayDuration(Connection con,int ID) throws SQLException {
